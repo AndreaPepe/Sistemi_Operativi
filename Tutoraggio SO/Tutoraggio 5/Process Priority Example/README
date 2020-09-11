@@ -1,0 +1,11 @@
+Compile the source "ProcessPriority.c" with:
+
+	- gcc -o test ProcessPriority.c
+
+
+Launch two (non-parallel) concurrent instances of the same executable "test" with:
+
+	- taskset 0x1 ./test & taskset 0x1 nice -n 5 ./test
+
+
+See the two different processes output frequency.
